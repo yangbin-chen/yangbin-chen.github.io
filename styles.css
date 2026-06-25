@@ -345,9 +345,9 @@ img {
 }
 
 .pub-thumb-wrap {
-  flex: 0 0 110px;
-  width: 110px;
-  height: 80px;
+  flex: 0 0 220px;
+  width: 220px;
+  height: 160px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -596,7 +596,7 @@ img {
 
   .pub-thumb-wrap {
     width: 100%;
-    height: 90px;
+    height: 180px;
     flex: none;
   }
 }
