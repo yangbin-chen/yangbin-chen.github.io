@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AI 科研新手村 — a starter guide for students new to AI research, by Yangbin Chen (XJTLU)">
+  <title>For Students — Yangbin Chen</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="students.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="top-nav" aria-label="Main">
+      <a href="index.html" class="nav-brand">Yangbin Chen</a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#research">Research</a></li>
+        <li><a href="index.html#news">News</a></li>
+        <li><a href="index.html#publications">Publications</a></li>
+        <li><a href="students.html" class="active" aria-current="page">For Students</a></li>
+        <li><a href="index.html#resume">Resume</a></li>
+        <li><a href="index.html#motto">Motto</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="page-wrapper guide-wrapper">
+    <aside class="guide-toc" aria-label="Guide contents">
+      <p class="guide-toc-title">Contents · 目录</p>
+      <ul>
+        <li><a href="#section-01">🧭 01 · 一张图理解学习路线</a></li>
+        <li><a href="#section-02">🟦 02 · 基础知识路径与分层学习资源</a></li>
+        <li><a href="#section-03">🟩 03 · 应用方向：按兴趣选一个主线</a></li>
+        <li><a href="#section-04">🟪 04 · 科研方法论：从想法到可信证据</a></li>
+        <li><a href="#section-05">🟧 05 · 负责任地使用 AI</a></li>
+        <li><a href="#section-06">🟦 06 · 十六周入门训练计划</a></li>
+        <li><a href="#section-07">🟩 07 · 工具与 Research OS 协作规范</a></li>
+        <li><a href="#section-08">🌍 08 · 值得长期关注的研究者、技术博客与开放科研社区</a></li>
+      </ul>
+    </aside>
+
+    <main class="guide">
+      <p class="guide-lead">
+        <strong>For Students.</strong> A step-by-step starter guide for newcomers to AI research,
+        prepared for incoming undergraduate and graduate students. The guide is written in Chinese;
+        the linked courses, papers and tools are mostly in English.
+      </p>
+<h1>🧭 AI 科研新手村</h1>
+<blockquote>
+<p>🟦 <strong>FOUNDATIONS</strong>　 ·　 🟩 <strong>HANDS-ON</strong>　 ·　 🟪 <strong>RESEARCH</strong>　 ·　 🟧 <strong>RESPONSIBLE AI</strong><br />
+<strong>2026 Edition | AI Research Starter Guide</strong></p>
+</blockquote>
+<!-- -->
+
+<blockquote class="callout callout-tip">
+<p><span class="callout-label">提示</span><strong>怎样使用本指南</strong>：先浏览知识地图，按“直觉 → 系统 → 实践 → 研究”选择资源；不追求把每个链接都刷完。每次学习至少产出一份能验证的代码、笔记或实验记录。</p>
+</blockquote>
+<!-- -->
+
+<blockquote>
+<p><strong>2026 Edition · From Foundations to Independent Research</strong><br />
+新入组本科生与研究生入门指南｜循序渐进、动手验证、科研诚信</p>
+</blockquote>
+<p><strong>学习理念</strong>：基础知识与科研实践同步进行。AI 可以辅助解释、检索、写代码和审查，但学生必须理解原理、验证证据，并对研究结论负责。</p>
+<hr />
+<h2>📚 目录 · Table of Contents</h2>
+<blockquote>
+<p>点击章节标题快速跳转。建议先阅读 <strong>01–02 基础路线</strong>，再根据任务选择 <strong>03–08</strong>，各部分也可独立使用。</p>
+</blockquote>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">章节</th>
+<th style="text-align: left;">内容</th>
+<th style="text-align: left;">适用目的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><a href="#section-01">🧭 01 · 学习路线</a></td>
+<td style="text-align: left;">技术知识地图与阶段目标</td>
+<td style="text-align: left;">建立全局认知</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#section-02">🟦 02 · 基础学习与资源</a></td>
+<td style="text-align: left;">数学、Python、ML、DL、Transformer、LLM、LMM、Agent</td>
+<td style="text-align: left;">从直观入门到进阶</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#section-03">🟩 03 · 应用方向</a></td>
+<td style="text-align: left;">选择适合自己的方向</td>
+<td style="text-align: left;">明确发展路径</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#section-04">🟪 04 · 科研方法论</a></td>
+<td style="text-align: left;">定义问题、综述、方法、复现、实验、写作、投稿</td>
+<td style="text-align: left;">独立开展研究</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#section-05">🟧 05 · 负责任使用 AI</a></td>
+<td style="text-align: left;">学术诚信、验证与安全</td>
+<td style="text-align: left;">避免常见风险</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#section-06">🟦 06 · 十六周训练计划</a></td>
+<td style="text-align: left;">阶段里程碑与能力检验</td>
+<td style="text-align: left;">制定学习节奏</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#section-07">🟩 07 · 工具与 Research OS</a></td>
+<td style="text-align: left;">文献、代码、实验、写作协作</td>
+<td style="text-align: left;">落实科研工作流</td>
+</tr>
+<tr>
+<td style="text-align: left;"><a href="#section-08">🌍 08 · 学者与开源社区</a></td>
+<td style="text-align: left;">研究者主页、博客、论文与社区</td>
+<td style="text-align: left;">建立长期信息源</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="section-01">🧭 01 · 一张图理解学习路线</h2>
+<pre class="mermaid">flowchart LR
+ A[Python · 数学 · Git] --&gt; B[机器学习 ML]
+ B --&gt; C[深度学习 DL]
+ C --&gt; D[Transformer]
+ D --&gt; E[大语言模型 LLM]
+ D --&gt; F[多模态模型 LMM]
+ E --&gt; G[Agent · Tools · Memory]
+ F --&gt; G
+ G --&gt; H[科研专项训练]
+ classDef base fill:#E0F2FE,stroke:#0284C7,color:#0C4A6E,stroke-width:2px;
+ classDef model fill:#EDE9FE,stroke:#7C3AED,color:#4C1D95,stroke-width:2px;
+ classDef research fill:#DCFCE7,stroke:#16A34A,color:#14532D,stroke-width:2px;
+ class A,B,C base;
+ class D,E,F model;
+ class G,H research;
+</pre>
+<p><strong>概念提示</strong>：AI 是广泛的研究领域；ML 是 AI 的重要分支；DL 是 ML 中的主要方法之一；Transformer 是模型架构；LLM/LMM 是基础模型类型；Agent 是利用模型、工具、状态和反馈解决任务的系统方式。这些概念并不是一条简单的包含关系。</p>
+<h3>如何阅读本指南</h3>
+<ul>
+<li><strong>入门</strong>：先建立直觉与词汇表，不追求公式细节。</li>
+<li><strong>系统</strong>：完成课程中的经典算法、练习和小项目。</li>
+<li><strong>进阶</strong>：读原始论文、理解模型局限、复现代码。</li>
+<li><strong>验收</strong>：能解释、能实现、能给出可验证证据。</li>
+</ul>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>核心知识</th>
+<th>最小可交付成果</th>
+<th>建议时间</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A 基础</td>
+<td>Python、数学、Git、ML</td>
+<td>一个含对照实验的传统 ML 项目</td>
+<td>1–4 周</td>
+</tr>
+<tr>
+<td>B 深度学习</td>
+<td>PyTorch、训练与反向传播</td>
+<td>一个可复现神经网络实验</td>
+<td>5–6 周</td>
+</tr>
+<tr>
+<td>C 模型架构</td>
+<td>Attention、Transformer、LLM</td>
+<td>手写 attention + 本地模型推理</td>
+<td>7–10 周</td>
+</tr>
+<tr>
+<td>D 前沿专项</td>
+<td>LMM、Agent、RAG、后训练</td>
+<td>小型工具调用 Agent 或多模态任务</td>
+<td>11–12 周</td>
+</tr>
+<tr>
+<td>E 科研实践</td>
+<td>文献、复现、方法、实验、写作</td>
+<td>Mini research report + 可复现仓库</td>
+<td>13–16 周</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>时间是参考，不是门槛。</strong> 数学或编程基础较弱的学生可以延长 A/B 阶段；已有基础的学生可提前开展复现。</p>
+</blockquote>
+<hr />
+<h2 id="section-02">🟦 02 · 基础知识路径与分层学习资源</h2>
+<blockquote>
+<p>资源筛选原则：优先大学公开课程、官方文档、可靠教材和原始论文；由浅入深，<strong>每个主题不必全部学完</strong>。部分英文课程可配合中文字幕或 AI 解释学习，但以原始材料为准。</p>
+</blockquote>
+<h3>A1. 数学、Python 与科研工程基础</h3>
+<p><strong>掌握内容</strong>：向量与矩阵、导数/梯度/链式法则、概率分布与条件概率、期望方差、基本统计；Python 基础、NumPy、Pandas、可视化、Linux shell、Git 和虚拟环境。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>层次</th>
+<th>推荐资源及链接</th>
+<th>建议怎么学</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>直观</td>
+<td><a href="https://www.3blue1brown.com/topics/linear-algebra" target="_blank" rel="noopener">3Blue1Brown · Linear Algebra</a>；<a href="https://www.3blue1brown.com/topics/calculus" target="_blank" rel="noopener">Calculus</a></td>
+<td>看图理解向量、变换、导数和梯度</td>
+</tr>
+<tr>
+<td>系统</td>
+<td><a href="https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/" target="_blank" rel="noopener">MIT 18.06 Linear Algebra</a>；<a href="https://docs.python.org/3/tutorial/" target="_blank" rel="noopener">Python 官方教程</a></td>
+<td>补线性代数、独立编写 Python</td>
+</tr>
+<tr>
+<td>实践</td>
+<td><a href="https://numpy.org/learn/" target="_blank" rel="noopener">NumPy Learn</a>；<a href="https://git-scm.com/book/en/v2" target="_blank" rel="noopener">Git 官方书 Pro Git</a>；<a href="https://missing.csail.mit.edu/" target="_blank" rel="noopener">The Missing Semester</a></td>
+<td>用 Git 管理实验代码，学 shell/SSH/调试</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>小练习</strong>：只用 NumPy 实现线性回归或逻辑回归梯度下降；提交 README、训练曲线和一次失败排查记录。</p>
+<details>
+<summary>🧪 Toy Demo A1 · 用 NumPy 从零学习一条直线（可直接运行）</summary>
+<p><strong>任务</strong>：给定 6 组模拟数据，学习关系 <code>y ≈ 2x + 1</code>。不使用 scikit-learn 或深度学习框架，自己实现 MSE 和梯度更新。</p>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.array([0., 1., 2., 3., 4., 5.])
+y = np.array([1.0, 2.9, 5.1, 6.8, 9.2, 11.0])
+w, b, lr = 0.0, 0.0, 0.02
+losses = []
+
+for epoch in range(1000):
+    pred = w * x + b
+    error = pred - y
+    loss = np.mean(error ** 2)
+    losses.append(loss)
+    dw = 2 * np.mean(error * x)
+    db = 2 * np.mean(error)
+    w -= lr * dw
+    b -= lr * db
+
+print(f&quot;w={w:.3f}, b={b:.3f}, final MSE={losses[-1]:.4f}&quot;)
+plt.plot(losses)
+plt.xlabel(&quot;Epoch&quot;)
+plt.ylabel(&quot;MSE&quot;)
+plt.title(&quot;Training loss&quot;)
+plt.show()
+</code></pre>
+<p><strong>应当观察到</strong>：<code>w</code> 接近 2、<code>b</code> 接近 1，损失总体下降。<strong>思考题</strong>：把 <code>lr</code> 改成 <code>0.5</code> 会发生什么？为什么即使模型参数接近真实值，MSE 通常也不是零？</p>
+<p><strong>交付</strong>：<code>linear_regression_numpy.py</code>、损失曲线截图、100 字以内的结果解释。首次运行需要 <code>numpy</code> 和 <code>matplotlib</code>。</p>
+</details>
+<h3>A2. 机器学习（ML）</h3>
+<p><strong>掌握内容</strong>：监督/无监督学习、回归与分类、决策树、SVM、聚类；training/validation/test、过拟合、数据泄漏、指标与交叉验证。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>层次</th>
+<th>推荐资源及链接</th>
+<th>建议怎么学</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>直观</td>
+<td><a href="https://developers.google.com/machine-learning/crash-course/" target="_blank" rel="noopener">Google Machine Learning Crash Course</a></td>
+<td>动画、交互与小练习建立直觉</td>
+</tr>
+<tr>
+<td>系统</td>
+<td><a href="https://www.coursera.org/specializations/machine-learning-introduction" target="_blank" rel="noopener">Andrew Ng · Machine Learning Specialization</a>；<a href="https://zh.d2l.ai/" target="_blank" rel="noopener">《动手学深度学习》基础篇</a></td>
+<td>系统掌握模型、损失、泛化</td>
+</tr>
+<tr>
+<td>进阶</td>
+<td><a href="https://cs229.stanford.edu/" target="_blank" rel="noopener">Stanford CS229</a>；<a href="https://scikit-learn.org/stable/user_guide.html" target="_blank" rel="noopener">scikit-learn User Guide</a></td>
+<td>推导算法，掌握实验评估规范</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>小练习</strong>：在公开数据上比较 Logistic Regression、Random Forest 与小型 MLP；记录划分方式、指标、误差案例和模型选择原因。</p>
+<blockquote>
+<p>🧪 <strong>Toy Demo A2 · 鸢尾花分类器擂台</strong>：使用 scikit-learn 内置 <code>load_iris()</code>，固定 <code>train_test_split(..., test_size=0.2, random_state=42, stratify=y)</code>；分别训练 <code>LogisticRegression(max_iter=1000)</code>、<code>RandomForestClassifier(random_state=42)</code> 与 <code>MLPClassifier(max_iter=1000, random_state=42)</code>。比较 <strong>accuracy、macro-F1 与 confusion matrix</strong>。<strong>思考</strong>：为什么只看 accuracy 不够？小数据集上一次划分能说明什么、不能说明什么？</p>
+</blockquote>
+<h3>B1. 深度学习（DL）与 PyTorch</h3>
+<p><strong>掌握内容</strong>：神经网络、反向传播、autograd、optimizer、学习率、batch、regularization、CNN/RNN、checkpoint、训练/验证曲线。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>层次</th>
+<th>推荐资源及链接</th>
+<th>建议怎么学</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>直观</td>
+<td><a href="https://www.3blue1brown.com/topics/neural-networks" target="_blank" rel="noopener">3Blue1Brown · Neural Networks</a></td>
+<td>直觉理解神经元、反向传播</td>
+</tr>
+<tr>
+<td>系统</td>
+<td><a href="https://zh.d2l.ai/" target="_blank" rel="noopener">《动手学深度学习》</a>；<a href="https://docs.pytorch.org/tutorials/beginner/basics/intro.html" target="_blank" rel="noopener">PyTorch Learn the Basics</a></td>
+<td>边学概念边写训练循环</td>
+</tr>
+<tr>
+<td>进阶</td>
+<td><a href="https://course.fast.ai/" target="_blank" rel="noopener">fast.ai Practical Deep Learning</a>；<a href="https://cs231n.stanford.edu/" target="_blank" rel="noopener">Stanford CS231n</a></td>
+<td>学调参、视觉模型与工程实践</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>小练习</strong>：独立训练 Fashion-MNIST/CIFAR-10；比较一个超参数或模型组件的影响；说明 control variables。</p>
+<blockquote>
+<p>🧪 <strong>Toy Demo B1 · Fashion-MNIST 手写训练循环</strong>：用 PyTorch 构建 <code>Flatten → Linear(784,128) → ReLU → Linear(128,10)</code>，训练 3 个 epoch；只改变学习率 <code>1e-3</code> 与 <code>1e-2</code>，其他配置固定。绘制训练损失、验证准确率。<strong>思考</strong>：两组实验是否使用了相同的 seed、划分与 optimizer？如果验证准确率波动，如何判断不是随机偶然？</p>
+</blockquote>
+<h3>C1. Transformer 与 NLP</h3>
+<p><strong>掌握内容</strong>：tokenization、embedding、Q/K/V、scaled dot-product attention、多头注意力、位置编码、mask、encoder/decoder、self-supervision。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>层次</th>
+<th>推荐资源及链接</th>
+<th>建议怎么学</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>直观</td>
+<td><a href="https://jalammar.github.io/illustrated-transformer/" target="_blank" rel="noopener">The Illustrated Transformer</a>；<a href="https://www.3blue1brown.com/topics/neural-networks" target="_blank" rel="noopener">3Blue1Brown · Transformers</a></td>
+<td>先看动态图，理解信息怎样流动</td>
+</tr>
+<tr>
+<td>系统</td>
+<td><a href="https://web.stanford.edu/class/cs224n/" target="_blank" rel="noopener">Stanford CS224N</a>；<a href="https://huggingface.co/learn/llm-course/" target="_blank" rel="noopener">Hugging Face LLM Course</a></td>
+<td>结合 NLP 任务与模型代码学习</td>
+</tr>
+<tr>
+<td>进阶</td>
+<td><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener">Attention Is All You Need（原始论文）</a>；<a href="https://nlp.seas.harvard.edu/annotated-transformer/" target="_blank" rel="noopener">The Annotated Transformer</a></td>
+<td>对照公式和 PyTorch 实现</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>小练习</strong>：手写简化 self-attention，比较有无 attention mask 的输出；清楚解释每个 tensor 的形状。</p>
+<blockquote>
+<p>🧪 <strong>Toy Demo C1 · 三个 Token 的 Attention</strong>：设 <code>X</code> 为 <code>3×4</code> 的小矩阵，先令 <code>Q=K=V=X</code>，计算 <code>softmax(QKᵀ/√4)V</code>；然后施加<strong>因果 mask</strong>（第 1 个 token 不能看到第 2、3 个，第 2 个不能看到第 3 个），观察 attention 权重变化。<strong>交付</strong>：原始权重矩阵、加 mask 后权重矩阵、逐个张量的 shape。<strong>思考</strong>：为什么 mask 应用于 softmax <em>之前</em>？</p>
+</blockquote>
+<h3>C2. LLM：从使用到理解训练与推理</h3>
+<p><strong>掌握内容</strong>：pretraining、next-token prediction、SFT、LoRA/PEFT、preference optimization、RAG、tool calling、KV cache、推理成本、幻觉与评测。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>层次</th>
+<th>推荐资源及链接</th>
+<th>建议怎么学</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>直观</td>
+<td><a href="https://karpathy.ai/zero-to-hero.html" target="_blank" rel="noopener">Andrej Karpathy · Neural Networks: Zero to Hero</a>；<a href="https://huggingface.co/learn/llm-course/" target="_blank" rel="noopener">Hugging Face LLM Course</a></td>
+<td>逐步建立从 token 到生成的理解</td>
+</tr>
+<tr>
+<td>系统</td>
+<td><a href="https://huggingface.co/docs/transformers/index" target="_blank" rel="noopener">Hugging Face Transformers Documentation</a>；<a href="https://huggingface.co/docs/peft/index" target="_blank" rel="noopener">PEFT Documentation</a></td>
+<td>运行、评测、适配小模型</td>
+</tr>
+<tr>
+<td>进阶</td>
+<td><a href="https://cs336.stanford.edu/" target="_blank" rel="noopener">Stanford CS336 · Language Modeling from Scratch</a>；<a href="https://arxiv.org/abs/2203.02155" target="_blank" rel="noopener">InstructGPT</a>；<a href="https://arxiv.org/abs/2106.09685" target="_blank" rel="noopener">LoRA</a></td>
+<td>理解模型训练系统、对齐和高效微调</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>小练习</strong>：运行一个公开小模型，比较 base/instruct 与 prompt 变化，记录可复现的评测集、生成参数与错误类型。算力允许时增加一个微型 LoRA 实验。</p>
+<blockquote>
+<p>🧪 <strong>Toy Demo C2 · 小模型的指令遵循测试</strong>：选择同一家族、规模相近且授权允许的 Base 与 Instruct 模型，准备 <strong>20 道固定任务</strong>（如 JSON 格式抽取、短文本分类、简单推理）。设置一致的 <code>temperature=0</code>（若支持）、最大输出长度、模型版本和提示模板，比较 <strong>格式通过率、任务正确率、拒答/幻觉案例</strong>。<strong>思考</strong>：为什么不同模型的 tokenizer/chat template 可能使比较不完全公平？</p>
+</blockquote>
+<h3>D1. LMM / MLLM：视觉、语音与多模态</h3>
+<p><strong>掌握内容</strong>：视觉/语音编码、模态融合与对齐、多模态 instruction tuning、图文/语音生成、缺失模态、数据偏差和评测。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>层次</th>
+<th>推荐资源及链接</th>
+<th>建议怎么学</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>直观</td>
+<td><a href="https://huggingface.co/learn/audio-course/" target="_blank" rel="noopener">Hugging Face Audio Course</a>；<a href="https://cs231n.stanford.edu/" target="_blank" rel="noopener">Stanford CS231n</a></td>
+<td>分别理解声音与图像的表示</td>
+</tr>
+<tr>
+<td>系统</td>
+<td><a href="https://huggingface.co/docs/transformers/tasks/image_text_to_text" target="_blank" rel="noopener">Hugging Face Multimodal Models Guide</a>；<a href="https://arxiv.org/abs/2103.00020" target="_blank" rel="noopener">CLIP 原论文</a></td>
+<td>学视觉-语言对齐及模型使用</td>
+</tr>
+<tr>
+<td>进阶</td>
+<td><a href="https://arxiv.org/abs/2304.08485" target="_blank" rel="noopener">LLaVA 原论文</a>；<a href="https://arxiv.org/abs/2212.04356" target="_blank" rel="noopener">Whisper 原论文</a></td>
+<td>阅读架构、数据与评测设计</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>小练习</strong>：比较两种图文提示或一个公开 ASR 模型在噪声条件下的表现，分析 failure cases；不要以几个演示样本代表泛化性能。</p>
+<blockquote>
+<p>🧪 <strong>Toy Demo D1 · 为语音识别加入噪声</strong>：准备 10 条拥有正确转写、且有合法使用许可的短语音，用一个公开 ASR 模型分别识别干净语音与加轻度白噪声的语音；用相同规范化规则计算 <strong>WER</strong> 并保存典型错误。<strong>思考</strong>：是否需要控制语音长度、音量和采样率？10 条样本为什么只能说明趋势而非模型的泛化性能？</p>
+</blockquote>
+<h3>D2. Agent、Multi-Agent 与科研工具链</h3>
+<p><strong>掌握内容</strong>：planning、tool calling、memory、reflection、observation-action-feedback、state、sandbox、multi-agent coordination；比较 agent 系统与普通单轮模型的成本和可靠性。</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>层次</th>
+<th>推荐资源及链接</th>
+<th>建议怎么学</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>直观</td>
+<td><a href="https://huggingface.co/learn/agents-course/zh-CN/unit0/introduction" target="_blank" rel="noopener">Hugging Face Agents Course（中文）</a></td>
+<td>从 Tools/Actions/Observations 入门</td>
+</tr>
+<tr>
+<td>系统</td>
+<td><a href="https://huggingface.co/learn/agents-course/" target="_blank" rel="noopener">Hugging Face Agents Course</a>；<a href="https://docs.langchain.com/oss/python/langgraph/overview" target="_blank" rel="noopener">LangGraph Documentation</a></td>
+<td>做有状态、可观测的 agent 工作流</td>
+</tr>
+<tr>
+<td>进阶</td>
+<td><a href="https://arxiv.org/abs/2210.03629" target="_blank" rel="noopener">ReAct</a>；<a href="https://arxiv.org/abs/2405.15793" target="_blank" rel="noopener">SWE-agent</a></td>
+<td>学轨迹、工具接口与环境反馈</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>小练习</strong>：构造一个只有 1–2 个工具的 Agent，设置超时/异常/工具调用预算，比较无工具、单 Agent 和多 Agent 方案的正确率与调用成本。</p>
+<blockquote>
+<p>🧪 <strong>Toy Demo D2 · 带计算器的任务 Agent</strong>：给模型 20 道包含小数和括号的算术题；建立 <code>calculator(expression)</code> 工具（使用<strong>安全解析器</strong>，不要直接 <code>eval</code> 未可信输入）。对比“模型直接回答”和“模型选择调用计算器”，记录 <strong>准确率、工具调用次数、失败率、平均响应时间</strong>，设置 3 次调用上限。进阶时再引入第二个检查 Agent，并检验额外调用成本是否值得。</p>
+</blockquote>
+<h3>选修：强化学习、模型服务与高效计算</h3>
+<ul>
+<li>强化学习理论：<a href="http://incompleteideas.net/book/the-book-2nd.html" target="_blank" rel="noopener">Sutton &amp; Barto · Reinforcement Learning（作者资料页）</a>；<a href="https://spinningup.openai.com/en/latest/" target="_blank" rel="noopener">OpenAI Spinning Up</a>。</li>
+<li>模型推理服务：<a href="https://docs.vllm.ai/" target="_blank" rel="noopener">vLLM Documentation</a>；<a href="https://docs.sglang.ai/" target="_blank" rel="noopener">SGLang Documentation</a>。</li>
+<li>训练框架与实际工程：先掌握 PyTorch 与实验可复现性，再根据项目需求学习分布式训练、量化、RL fine-tuning。</li>
+</ul>
+<hr />
+<h2 id="section-03">🟩 03 · 应用方向：按兴趣选一个主线</h2>
+<p>应用方向不是必须按顺序学完的另一条知识链。建议在有共同基础后选择一项深入：</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>方向</th>
+<th>常见问题</th>
+<th>推荐起点</th>
+<th>初级科研练习</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NLP 与 LLM</td>
+<td>文本理解、生成、对齐、检索</td>
+<td>CS224N / HF LLM Course</td>
+<td>一个固定 benchmark 上的 baseline 对比</td>
+</tr>
+<tr>
+<td>CV 与视觉语言</td>
+<td>分类、检测、VLM、视频理解</td>
+<td>CS231n / CLIP</td>
+<td>模型失败案例与 domain shift 分析</td>
+</tr>
+<tr>
+<td>Speech / Audio</td>
+<td>ASR、TTS、语音表示</td>
+<td>HF Audio Course</td>
+<td>公开语音数据上的鲁棒性测试</td>
+</tr>
+<tr>
+<td>Agent / Multi-Agent</td>
+<td>工具使用、长程任务、协作</td>
+<td>HF Agents Course / ReAct</td>
+<td>单 Agent 与多 Agent 的公平对照</td>
+</tr>
+<tr>
+<td>AI for Healthcare</td>
+<td>医疗文本/影像、多模态与隐私</td>
+<td>通用模型基础 + 医疗数据规范</td>
+<td>公开数据上的跨域和公平性评估</td>
+</tr>
+<tr>
+<td>Foundation Model Methods</td>
+<td>数据效率、微调、后训练、推理</td>
+<td>CS336 / PEFT</td>
+<td>数据规模、质量与训练效率的消融</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p>研究方向是一组<strong>问题和方法</strong>，不是一系列流行工具名。不要因为一个方向“热门”就跳过任务定义、数据与评测。</p>
+</blockquote>
+<hr />
+<h2 id="section-04">🟪 04 · 科研方法论：从想法到可信证据</h2>
+<pre class="mermaid">flowchart TD
+ Q[定义研究问题] --&gt; L[文献调研与核实]
+ L --&gt; H[提出可证伪假设]
+ H --&gt; B[基线复现]
+ B --&gt; M[方法设计]
+ M --&gt; X[公平实验与消融]
+ X --&gt; E{证据支持假设?}
+ E -- 否 --&gt; H
+ E -- 是 --&gt; W[写作与审稿模拟]
+ W --&gt; S[投稿 · Rebuttal · 归档]
+</pre>
+<h3>Step 1 · 怎样定义一个好的研究问题？</h3>
+<p><strong>不够好</strong>：“用大模型改进某个任务。”<br />
+<strong>更好</strong>：“在什么数据条件、什么任务和约束下，新机制相较哪些 baseline，在什么指标上改善？是否存在成本或公平性权衡？”</p>
+<p>研究问题至少写清：<strong>Task、Gap、Hypothesis、Comparator、Metric、Constraint、Failure condition</strong>。每个假设应可被实验否定。</p>
+<h3>Step 2 · 怎样进行 Literature Review？</h3>
+<ol>
+<li>从 survey、经典论文和最近 2–3 年代表工作入手，再追踪必要的最新预印本。</li>
+<li>使用同义词、任务名、方法类别、benchmark 组合搜索；留存检索时间与来源。</li>
+<li>回到原文核对 DOI、作者、venue、代码、数据与具体实验结果；区分 arXiv 与正式出版。</li>
+<li>使用 Zotero 管论文原文及 BibTeX；使用 Paper Card 记录 Problem、Method、Evidence、Limitations、Relation。</li>
+<li>将 related work <strong>按方法与假设分类</strong>，而不是逐篇排列摘要。</li>
+</ol>
+<h3>Step 3 · 怎样设计 Method？</h3>
+<p>先说清创新点在哪里：数据、表示、架构、训练目标、优化方式、推断策略还是系统协议？然后写出为什么这一变化<strong>应该</strong>产生效果，明确理论/经验依据、所需数据、伪代码/损失函数以及潜在失败机制。多加模块并不天然构成学术创新。</p>
+<h3>Step 4 · 怎样复现公开 Baseline？</h3>
+<p>检查论文与仓库版本、许可证、依赖、数据、checkpoint；记录 commit、seed、配置、硬件和执行命令。先跑最小 sanity check，再按原评价协议评测。<strong>代码运行成功 ≠ 结果复现成功</strong>。</p>
+<h3>Step 5 · 怎样设计实验？</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>类型</th>
+<th>核心科研问题</th>
+<th>关键检查</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Main comparison</td>
+<td>比哪些基线更好？</td>
+<td>相同 split / 指标 / 预算</td>
+</tr>
+<tr>
+<td>Ablation</td>
+<td>哪个机制带来效果？</td>
+<td>控制变量、清晰替代假设</td>
+</tr>
+<tr>
+<td>Sensitivity</td>
+<td>参数是否敏感？</td>
+<td>范围合理，显示趋势</td>
+</tr>
+<tr>
+<td>Robustness / OOD</td>
+<td>能否泛化？</td>
+<td>独立场景与分布偏移</td>
+</tr>
+<tr>
+<td>Efficiency</td>
+<td>多花的代价是否值得？</td>
+<td>时间、显存、tokens、成本</td>
+</tr>
+<tr>
+<td>Error analysis</td>
+<td>失败发生在哪里？</td>
+<td>有代表性的类别与样本</td>
+</tr>
+<tr>
+<td>Stability</td>
+<td>结果是否偶然？</td>
+<td>多 seed、方差或置信区间</td>
+</tr>
+</tbody>
+</table></div>
+<p>每次实验至少填写 Experiment Card 的 Goal、Hypothesis、Config、Command、Results、Interpretation、Next Actions。任何提升都应考虑额外数据、参数量、训练预算、数据泄漏和测试集调参等替代解释。</p>
+<h3>Step 6 · 怎样写论文？</h3>
+<p><strong>Introduction</strong>：背景 → 精确问题 → 现有方法差距 → 核心机制 → 证据 → Contributions。<br />
+<strong>Related Work</strong>：分类、方法联系与关键差异。<br />
+<strong>Method</strong>：形式化、核心机制、算法与实现细节。<br />
+<strong>Experiments</strong>：公平 baseline、主结果、消融、稳健性、错误分析。<br />
+<strong>Limitations/Ethics</strong>：适用范围、成本、失效情形与风险。</p>
+<p>先写 outline 和 evidence map，再写完整段落。论文写作使用 Zotero / BibTeX / Overleaf，避免AI自动编造 citation。</p>
+<h3>Step 7 · 投稿、模拟审稿与 Rebuttal</h3>
+<p>投稿前按当届官方 CFP 检查 venue 匹配、双盲要求、篇幅、supplement、作者署名、伦理和 AI 使用政策。审稿模拟至少覆盖 <strong>Novelty、Soundness、Experiments、Clarity、Reproducibility</strong>。Rebuttal 应直接回应问题、提供真实证据、说明修改位置；不伪造追加实验。</p>
+<p>参考：<a href="https://neurips.cc/public/guides/PaperChecklist" target="_blank" rel="noopener">NeurIPS Paper Checklist</a>；<a href="https://aclanthology.org/" target="_blank" rel="noopener">ACL Anthology</a>；<a href="https://openreview.net/" target="_blank" rel="noopener">OpenReview</a>。</p>
+<hr />
+<h2 id="section-05">🟧 05 · 负责任地使用 AI</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>情形</th>
+<th>推荐做法</th>
+<th>不可接受的做法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>学基础</td>
+<td>先独立尝试，再让 AI 解释错误</td>
+<td>不理解就提交完整生成代码</td>
+</tr>
+<tr>
+<td>文献调研</td>
+<td>AI 辅助搜索、筛选与归纳；逐条核实</td>
+<td>杜撰论文、DOI、BibTeX、结果</td>
+</tr>
+<tr>
+<td>写代码</td>
+<td>让 AI 生成脚手架与测试；自己执行验证</td>
+<td>不看 diff、不测就提交</td>
+</tr>
+<tr>
+<td>做实验</td>
+<td>AI 提出假设与替代解释；结果来自真实日志</td>
+<td>捏造数据、选择性隐瞒失败</td>
+</tr>
+<tr>
+<td>写论文</td>
+<td>用 AI 润色和检查逻辑；按政策披露</td>
+<td>AI 生成未经核实的科学结论</td>
+</tr>
+<tr>
+<td>涉及敏感材料</td>
+<td>使用授权数据和合规环境</td>
+<td>上传未授权患者、审稿或私有数据</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>一条底线</strong>：AI 辅助可以提高科研生产率，但不转移研究者对事实、方法、实验和署名的责任。课程或会议政策可能不同，必须遵守所在单位与当届 venue 的具体规定。</p>
+<hr />
+<h2 id="section-06">🟦 06 · 十六周入门训练计划</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>周次</th>
+<th>学习重点</th>
+<th>交付物</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1–2</td>
+<td>Python / Git / Linux / NumPy</td>
+<td>有说明的基础代码库</td>
+</tr>
+<tr>
+<td>3–4</td>
+<td>ML / 数据划分 / 指标</td>
+<td>一个 baseline 对比 + 5 张 Paper Cards</td>
+</tr>
+<tr>
+<td>5–6</td>
+<td>PyTorch / DL / 训练</td>
+<td>训练日志、误差分析、复现 README</td>
+</tr>
+<tr>
+<td>7–8</td>
+<td>Attention / Transformer</td>
+<td>手写 attention + paper presentation</td>
+</tr>
+<tr>
+<td>9–10</td>
+<td>LLM / LoRA / 模型评测</td>
+<td>小模型评测报告 + Project Card</td>
+</tr>
+<tr>
+<td>11–12</td>
+<td>LMM 或 Agent</td>
+<td>一个专项 mini-project + 初步实验矩阵</td>
+</tr>
+<tr>
+<td>13–14</td>
+<td>Ablation / 稳健性 / 失败分析</td>
+<td>Experiment Cards + 可复现结果</td>
+</tr>
+<tr>
+<td>15–16</td>
+<td>论文结构 / 模拟审稿 / 汇报</td>
+<td>4–6 页 Mini Research Report</td>
+</tr>
+</tbody>
+</table></div>
+<h3>完成检查：看能力，不看“刷课时长”</h3>
+<ul>
+<li><input type="checkbox" disabled> 能用自己的话解释 ML、DL、Transformer、LLM、LMM 和 Agent 的关系。</li>
+<li><input type="checkbox" disabled> 能手写并测试一个小型神经网络或 attention 核心模块。</li>
+<li><input type="checkbox" disabled> 能读懂论文中的研究问题、方法、baseline、指标与关键图表。</li>
+<li><input type="checkbox" disabled> 能复现一个公开 baseline 或完整记录不能复现的原因。</li>
+<li><input type="checkbox" disabled> 能设计包含对照组与消融的实验，并如实报告结果。</li>
+<li><input type="checkbox" disabled> 能写一份引用准确、结论审慎的 mini research report。</li>
+</ul>
+<hr />
+<h2 id="section-07">🟩 07 · 工具与 Research OS 协作规范</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>工作内容</th>
+<th>推荐工具</th>
+<th>产物</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>学习 / Brainstorm</td>
+<td>教材、公开课、ChatGPT</td>
+<td>学习笔记、Project Card</td>
+</tr>
+<tr>
+<td>Literature Review</td>
+<td>Scholar、Semantic Scholar、arXiv、Zotero</td>
+<td>Paper Card、Related Work Matrix</td>
+</tr>
+<tr>
+<td>查找数据与代码</td>
+<td>Hugging Face、GitHub、官方 benchmark</td>
+<td>Dataset/Repo Card</td>
+</tr>
+<tr>
+<td>实现和复现</td>
+<td>Python、PyTorch、Git、Cursor（可选）</td>
+<td>代码与可运行脚本</td>
+</tr>
+<tr>
+<td>实验</td>
+<td>CSV/MLflow/TensorBoard 等</td>
+<td>日志、Experiment Card、结果表</td>
+</tr>
+<tr>
+<td>写作</td>
+<td>Overleaf、LaTeX、Zotero</td>
+<td>Writing Section Card、paper draft</td>
+</tr>
+<tr>
+<td>内部审稿</td>
+<td>人工互审 + AI 辅助检查</td>
+<td>缺陷清单与 revision plan</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>每周组会四句话</strong>：本周研究问题是什么？做了什么？有什么可查的证据？下一步准备怎样验证？</p>
+<blockquote>
+<p><strong>导师寄语</strong>：科研不是比谁更快调用新模型，而是比谁能提出值得回答的问题、建立可靠证据，并诚实解释发现和局限。</p>
+</blockquote>
+<hr />
+<hr />
+<h2 id="section-08">🌍 08 · 值得长期关注的研究者、技术博客与开放科研社区</h2>
+<blockquote>
+<p>🟪 <strong>为什么关注研究者，而不仅关注模型榜单？</strong> 高质量研究习惯来自持续阅读论文、原始代码、技术复盘与开放讨论。以下名单强调<strong>研究成果公开、技术交流活跃或对青年研究者有较强启发价值</strong>，并非严格的年龄排名，也不构成学术影响力榜单。研究者岗位、博客活跃程度和仓库状态可能变化，以各自主页为准。</p>
+</blockquote>
+<h3>8.1 研究者与技术作者：按学习目的选择</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>关注领域</th>
+<th>研究者 / 作者</th>
+<th>官方入口</th>
+<th>为什么值得学生关注</th>
+<th>适合阶段</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🔵 从零理解神经网络和 LLM</td>
+<td><strong>Andrej Karpathy</strong></td>
+<td><a href="https://github.com/karpathy" target="_blank" rel="noopener">GitHub / nanochat / micrograd</a> · <a href="https://karpathy.ai/" target="_blank" rel="noopener">主页</a></td>
+<td>用相对精炼的代码解释自动微分、语言模型、推断与训练</td>
+<td>入门 → 进阶</td>
+</tr>
+<tr>
+<td>🔵 LLM 教程、模型机制、后训练</td>
+<td><strong>Sebastian Raschka</strong></td>
+<td><a href="https://sebastianraschka.com/blog/" target="_blank" rel="noopener">技术博客</a> · <a href="https://sebastianraschka.com/books/" target="_blank" rel="noopener">书籍与配套代码</a> · <a href="https://github.com/rasbt" target="_blank" rel="noopener">GitHub</a></td>
+<td>图解与可执行代码结合，尤其适合把概念变成实现</td>
+<td>入门 → 进阶</td>
+</tr>
+<tr>
+<td>🟣 模型推理、效率与系统</td>
+<td><strong>Tri Dao</strong></td>
+<td><a href="https://tridao.me/" target="_blank" rel="noopener">研究主页</a> · <a href="https://github.com/Dao-AILab/flash-attention" target="_blank" rel="noopener">FlashAttention</a></td>
+<td>从 attention 的计算和 IO 成本思考算法与系统设计</td>
+<td>进阶</td>
+</tr>
+<tr>
+<td>🟣 LLM 量化与可及性</td>
+<td><strong>Tim Dettmers</strong></td>
+<td><a href="https://timdettmers.com/" target="_blank" rel="noopener">个人网站</a> · <a href="https://github.com/timdettmers" target="_blank" rel="noopener">GitHub</a></td>
+<td>关注量化、低资源训练与工程可用性</td>
+<td>进阶</td>
+</tr>
+<tr>
+<td>🟠 基础模型训练、对齐与 RL</td>
+<td><strong>Nathan Lambert</strong></td>
+<td><a href="https://www.interconnects.ai/" target="_blank" rel="noopener">Interconnects</a> · <a href="https://allenai.org/" target="_blank" rel="noopener">AI2 开放模型</a></td>
+<td>从开放模型研究实践分析 post-training、RL 和模型训练生态</td>
+<td>进阶</td>
+</tr>
+<tr>
+<td>🟠 AI 工程与生产系统</td>
+<td><strong>Chip Huyen</strong></td>
+<td><a href="https://huyenchip.com/" target="_blank" rel="noopener">个人主页与博客</a> · <a href="https://github.com/chiphuyen" target="_blank" rel="noopener">GitHub</a></td>
+<td>理解数据、部署、评价、系统可靠性与产品化之间的关系</td>
+<td>入门 → 进阶</td>
+</tr>
+<tr>
+<td>🟢 推理与工具使用</td>
+<td><strong>Denny Zhou</strong></td>
+<td><a href="https://dennyzhou.github.io/" target="_blank" rel="noopener">论文与个人主页</a></td>
+<td>通过推理、self-debugging、工具与优化研究学习问题定义</td>
+<td>进阶</td>
+</tr>
+<tr>
+<td>🟢 语言、知识与推理</td>
+<td><strong>Yejin Choi</strong></td>
+<td><a href="https://yejinc.github.io/" target="_blank" rel="noopener">论文与课程</a></td>
+<td>关注语言模型的常识、推理、训练与评价问题</td>
+<td>进阶</td>
+</tr>
+<tr>
+<td>🟢 基础模型评价方法</td>
+<td><strong>Percy Liang</strong></td>
+<td><a href="https://crfm.stanford.edu/" target="_blank" rel="noopener">Stanford CRFM</a> · <a href="https://github.com/stanford-crfm/helm" target="_blank" rel="noopener">HELM</a></td>
+<td>学习如何构建可复查的 benchmark 与系统性评价；注意 HELM 已进入维护模式</td>
+<td>进阶</td>
+</tr>
+<tr>
+<td>🟢 机器人学习与泛化</td>
+<td><strong>Chelsea Finn</strong></td>
+<td><a href="https://rail.eecs.berkeley.edu/" target="_blank" rel="noopener">研究组官网</a></td>
+<td>研究学习算法、机器人和任务迁移，适合理解从模型到行动</td>
+<td>进阶</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote class="callout callout-note">
+<p><span class="callout-label">注意</span><strong>阅读方法建议</strong>：选 2–3 位长期关注即可。每月阅读 1 篇论文或 1 篇长技术文章，记录“研究问题、关键机制、证据、局限、我想复现什么”。不要仅转发文章标题或把作者观点当作确定事实。</p>
+</blockquote>
+<h3>8.2 值得收藏的长期资源库与开源社区</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>社区 / 平台</th>
+<th>官方链接</th>
+<th>关注内容</th>
+<th>推荐用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🧠 <strong>Hugging Face</strong></td>
+<td><a href="https://huggingface.co/models" target="_blank" rel="noopener">Models</a> · <a href="https://huggingface.co/datasets" target="_blank" rel="noopener">Datasets</a> · <a href="https://huggingface.co/learn" target="_blank" rel="noopener">Learn</a></td>
+<td>开放模型、数据集、课程和社区讨论</td>
+<td>学习、检索、复现</td>
+</tr>
+<tr>
+<td>🧪 <strong>PyTorch</strong></td>
+<td><a href="https://pytorch.org/tutorials/" target="_blank" rel="noopener">官方教程</a> · <a href="https://github.com/pytorch/pytorch" target="_blank" rel="noopener">GitHub</a></td>
+<td>深度学习框架、训练系统与开源贡献</td>
+<td>基础与工程</td>
+</tr>
+<tr>
+<td>🧬 <strong>Allen Institute for AI (Ai2)</strong></td>
+<td><a href="https://allenai.org/" target="_blank" rel="noopener">研究主页</a> · <a href="https://github.com/allenai" target="_blank" rel="noopener">GitHub</a></td>
+<td>开放模型、数据、评价与 AI 研究</td>
+<td>LLM、科学开放性</td>
+</tr>
+<tr>
+<td>🧭 <strong>Stanford CRFM</strong></td>
+<td><a href="https://crfm.stanford.edu/" target="_blank" rel="noopener">研究和博客</a></td>
+<td>Foundation Models、评价与社会影响</td>
+<td>研究问题与评价</td>
+</tr>
+<tr>
+<td>📚 <strong>ACL Anthology</strong></td>
+<td><a href="https://aclanthology.org/" target="_blank" rel="noopener">论文库</a></td>
+<td>NLP、语言模型、语音/多模态相关论文</td>
+<td>查正式论文与引用</td>
+</tr>
+<tr>
+<td>📄 <strong>arXiv / OpenReview</strong></td>
+<td><a href="https://arxiv.org/" target="_blank" rel="noopener">arXiv</a> · <a href="https://openreview.net/" target="_blank" rel="noopener">OpenReview</a></td>
+<td>预印本、公开评审讨论与论文版本</td>
+<td>跟踪前沿与反思审稿</td>
+</tr>
+<tr>
+<td>🛠️ <strong>GitHub</strong></td>
+<td><a href="https://github.com/trending" target="_blank" rel="noopener">Trending</a> · <a href="https://github.com/explore" target="_blank" rel="noopener">Explore</a></td>
+<td>开源实现、issue、release、commit</td>
+<td>学习真实工程过程</td>
+</tr>
+<tr>
+<td>🩺 <strong>PhysioNet</strong></td>
+<td><a href="https://physionet.org/" target="_blank" rel="noopener">官方网站</a></td>
+<td>生理信号及医疗研究数据、课程与工具</td>
+<td>医疗 AI 数据规范</td>
+</tr>
+<tr>
+<td>🔬 <strong>MONAI</strong></td>
+<td><a href="https://monai.io/" target="_blank" rel="noopener">项目官网</a> · <a href="https://github.com/Project-MONAI/MONAI" target="_blank" rel="noopener">GitHub</a></td>
+<td>医学影像 AI 框架与可复用组件</td>
+<td>医疗图像实践</td>
+</tr>
+<tr>
+<td>🗣️ <strong>SpeechBrain</strong></td>
+<td><a href="https://speechbrain.github.io/" target="_blank" rel="noopener">官网</a> · <a href="https://github.com/speechbrain/speechbrain" target="_blank" rel="noopener">GitHub</a></td>
+<td>语音识别、说话人和语音深度学习</td>
+<td>Speech 专项</td>
+</tr>
+<tr>
+<td>🎨 <strong>Papers with Code</strong></td>
+<td><a href="https://paperswithcode.com/" target="_blank" rel="noopener">网站</a></td>
+<td>论文/代码/任务入口（需核验维护与时效）</td>
+<td>找 baseline 线索</td>
+</tr>
+</tbody>
+</table></div>
+<h3>8.3 不同阶段的推荐订阅组合</h3>
+<pre class="mermaid">flowchart TD
+  A[🟦 刚入门] --&gt; B[Karpathy · Raschka · PyTorch Tutorials]
+  B --&gt; C[🟩 会跑模型]
+  C --&gt; D[Hugging Face · GitHub · Paper + Repo]
+  D --&gt; E[🟪 开展科研]
+  E --&gt; F[领域研究者主页 · arXiv · ACL/OpenReview]
+  F --&gt; G[🟧 做可信实验]
+  G --&gt; H[代码版本 · 数据来源 · 多次实验 · 伦理核查]
+  classDef c1 fill:#DBEAFE,stroke:#2563EB,color:#1E3A8A;
+  classDef c2 fill:#DCFCE7,stroke:#16A34A,color:#14532D;
+  classDef c3 fill:#F3E8FF,stroke:#9333EA,color:#581C87;
+  classDef c4 fill:#FFEDD5,stroke:#EA580C,color:#7C2D12;
+  class A,B c1;
+  class C,D c2;
+  class E,F c3;
+  class G,H c4;
+</pre>
+<h3>8.4 每月一次的开放科研阅读挑战</h3>
+<ul>
+<li><input type="checkbox" disabled> <strong>人物</strong>：从上表选 1 位研究者，浏览其最近 2–3 篇代表作品并核查发表状态。</li>
+<li><input type="checkbox" disabled> <strong>技术</strong>：从其公开代码选一个可以运行的最小 demo 或一个公式进行复现。</li>
+<li><input type="checkbox" disabled> <strong>科研</strong>：写 1 张 Paper Card，指出问题、创新、实验、局限和可能的替代解释。</li>
+<li><input type="checkbox" disabled> <strong>分享</strong>：用 5 分钟解释“这项工作解决了什么”和“还有什么没解决”，给出处和运行证据。</li>
+</ul>
+<hr />
+<h3>🎯 最后记住</h3>
+<blockquote>
+<p><strong>Learn the foundations · Read the sources · Build and test · Question the evidence · Share responsibly.</strong><br />
+扎实的基础、可证伪的问题、可复现的实验，以及对结果的诚实解释，比追逐任何一个暂时领先的模型更加重要。</p>
+</blockquote>
+<p><em>版本：2026-10 · 建议每学期检查资源链接、研究者主页与投稿规范。</em></p>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>© 2026 Yangbin Chen · <a href="index.html">Homepage</a> · <a href="https://scholar.xjtlu.edu.cn/en/persons/YangbinChen/" target="_blank" rel="noopener">XJTLU Profile</a></p>
+  </footer>
+
+  <script type="module">
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+    mermaid.initialize({ startOnLoad: false, theme: "base", securityLevel: "strict" });
+    mermaid.run({ querySelector: "pre.mermaid" });
+  </script>
+  <script>
+    (function () {
+      var links = Array.prototype.slice.call(document.querySelectorAll(".guide-toc a"));
+      var byId = {};
+      links.forEach(function (a) { byId[a.getAttribute("href").slice(1)] = a; });
+      if (!("IntersectionObserver" in window)) return;
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting || !byId[entry.target.id]) return;
+          links.forEach(function (a) { a.classList.remove("active"); });
+          byId[entry.target.id].classList.add("active");
+        });
+      }, { rootMargin: "-15% 0px -75% 0px" });
+      document.querySelectorAll(".guide h2[id]").forEach(function (h) { observer.observe(h); });
+    })();
+  </script>
+</body>
+</html>

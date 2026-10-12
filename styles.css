@@ -503,6 +503,35 @@ img {
   border-radius: 8px;
 }
 
+.students-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem 1rem;
+  margin: 1.15rem 0 0;
+}
+
+.students-cta a {
+  display: inline-block;
+  font-weight: 700;
+  color: #fff;
+  background: var(--link);
+  border-radius: 8px;
+  padding: 0.55rem 0.95rem;
+  text-decoration: none;
+}
+
+.students-cta a:hover {
+  background: var(--link-hover);
+  color: #fff;
+  text-decoration: none;
+}
+
+.students-cta span {
+  font-size: 0.85rem;
+  color: #888;
+}
+
 .site-footer {
   text-align: center;
   padding: 1.5rem;
