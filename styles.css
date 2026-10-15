@@ -532,6 +532,52 @@ img {
   color: #888;
 }
 
+.visitor-widget {
+  max-width: 420px;
+}
+
+.visitor-stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.6rem;
+  margin: 0 0 0.85rem;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.visitor-stats strong {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.visitor-stats-sep {
+  color: #c5cbd3;
+}
+
+.visitor-map {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fafbfc;
+}
+
+.visitor-map img,
+.visitor-map iframe,
+.visitor-map a img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.visitor-note {
+  margin: 0.55rem 0 0;
+  font-size: 0.78rem;
+  color: #999;
+}
+
 .site-footer {
   text-align: center;
   padding: 1.5rem;
