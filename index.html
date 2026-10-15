@@ -636,15 +636,14 @@
         Visitors
       </h2>
       <div class="visitor-widget">
-        <p class="visitor-stats">
-          <span><strong id="busuanzi_value_site_uv">–</strong> visitors</span>
-          <span class="visitor-stats-sep" aria-hidden="true">·</span>
-          <span><strong id="busuanzi_value_site_pv">–</strong> views</span>
-        </p>
         <div class="visitor-map" aria-label="Visitor origins">
           <script type="text/javascript" id="mapmyvisitors" src="https://mapmyvisitors.com/map.js?d=8BTSte6rGOlEb5v6ua3k_KfMGzQQ9Er5wcU_1rTrbmU&cl=ffffff&w=a"></script>
         </div>
-        <p class="visitor-note">Visitor origins on the map. Counts update after the site is published.</p>
+        <div class="led-panel">
+          <span class="led-label">total viewer</span>
+          <div class="led-display" data-led-for="busuanzi_value_site_pv" aria-hidden="true"></div>
+          <span id="busuanzi_value_site_pv" class="visually-hidden">–</span>
+        </div>
       </div>
     </section>
     </div>
@@ -654,5 +653,36 @@
     <p>© 2026 Yangbin Chen · <a href="https://scholar.xjtlu.edu.cn/en/persons/YangbinChen/" target="_blank" rel="noopener">XJTLU Profile</a></p>
   </footer>
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script>
+    (function () {
+      var SEG = { 0: "abcdef", 1: "bc", 2: "abdeg", 3: "abcdg", 4: "bcfg", 5: "acdfg", 6: "acdefg", 7: "abc", 8: "abcdefg", 9: "abcdfg", "-": "g" };
+      var WIDTH = 5;
+
+      function render(display, raw) {
+        var digits = String(raw || "").replace(/\D/g, "");
+        digits = digits ? digits.slice(-WIDTH).padStart(WIDTH, "0") : "-----";
+        display.replaceChildren();
+        digits.split("").forEach(function (ch) {
+          var on = SEG[ch] || "";
+          var digit = document.createElement("span");
+          digit.className = "led-digit";
+          "abcdefg".split("").forEach(function (name) {
+            var seg = document.createElement("span");
+            seg.className = "led-seg led-seg-" + name + (on.indexOf(name) !== -1 ? " is-on" : "");
+            digit.appendChild(seg);
+          });
+          display.appendChild(digit);
+        });
+      }
+
+      document.querySelectorAll("[data-led-for]").forEach(function (display) {
+        var source = document.getElementById(display.getAttribute("data-led-for"));
+        if (!source) return;
+        var update = function () { render(display, source.textContent); };
+        update();
+        new MutationObserver(update).observe(source, { childList: true, characterData: true, subtree: true });
+      });
+    })();
+  </script>
 </body>
 </html>
